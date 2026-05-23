@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+
+const today = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Base title="kiran haber :: now">
+  <div class="content">
+    <p>
+      I'm currently interning at the Multiscale Ocean Dynamics lab within the Scripps Institution of Oceanography at UCSD.
+      So far, I've helped test a new transceiver and built a voltage/current measurement module that could be integrated into a "switch"
+      for autonomous sensor power management onboard underwater ocean profilers (basically, waking up sensors when the time 
+      is right to record data). As of now, I'm working on an RTK-enabled GPS wave buoy, which will hopefully be ready for deployment soon!
+      My favorite thing about my time at Scripps up to this point is the opportunities I get to branch out of just writing code
+       and develop my electrical and mechanical engineering skills.
+    </p>
+    
+    <p>
+      <b>Consuming:</b> <i>The C Programming Language</i> by Brian Kernighan and Dennis Ritchie, Lucy Bedroque, Snow Strippers, Bladee,
+      Vinland Saga
+    </p>
+
+    <div class="meta">Updated {today}</div>
+  </div>
+</Base>
+
+<style>
+  .content {
+    padding: 40px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .meta {
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+</style>

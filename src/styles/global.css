@@ -1,0 +1,65 @@
+:root {
+  --bg:         #b2b6ba;   /* concrete grey — site background */
+  --bg-sidebar: #b2b6ba;   /* sidebar matches, no contrast shift */
+  --border:     #8a8e92;   /* sidebar divider, subtle rule */
+  --text:       #1a1e22;   /* near-black — name, body copy */
+  --text-meta:  #4a5058;   /* muted — sandiego::compe@ucsb, timestamps */
+  --link:       #0000ee;   /* hyperlink blue — all nav links, all links */
+  --link-visited:#551a8b;  /* visited / hover state — standard browser purple */
+  --blue-mesh:  #0000ee;   /* hero mesh color base */
+}
+
+@font-face {
+  font-family: 'Iosevka Slab';
+  src: url('/fonts/iosevka_slab_reg0.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iosevka';
+  src: url('/fonts/iosevka_reg0.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Iosevka', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+a:hover, a:active, a.active {
+  color: var(--link-visited);
+}
+
+.meta {
+  color: var(--text-meta);
+  font-size: 10px;
+  letter-spacing: 0.01em;
+}
+
+h1, .site-name {
+  font-family: 'Iosevka Slab', serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text);
+}

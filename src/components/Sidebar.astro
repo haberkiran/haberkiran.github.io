@@ -1,0 +1,76 @@
+---
+const pathname = Astro.url.pathname;
+const active = (path: string) => (pathname === path || pathname === path + '/') ? 'active' : '';
+
+const name = "KIRAN HABER"; 
+---
+
+<aside>
+  <div class="top">
+    <a href="/" class="site-name">{name}</a>
+    
+    <nav>
+      <a href="/about" class={active('/about')}>about</a>
+      <a href="/systems" class={active('/systems')}>systems</a>
+      <a href="/photography" class={active('/photography')}>photography</a>
+      <a href="/now" class={active('/now')}>now</a>
+    </nav>
+  </div>
+
+  <!-- <div class="footer">
+    <div class="social-links">
+      <a href=https://github.com/haberkiran>gh://haberkiran</a>
+    </div>
+  </div> -->
+</aside>
+
+<style>
+  aside {
+    width: 152px;
+    height: 100vh;
+    border-right: 0.5px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 20px 20px;
+    flex-shrink: 0;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .site-name {
+    font-family: 'Iosevka Slab', serif;
+    font-size: 13px;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.2;
+    white-space: pre-wrap;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav a {
+    font-family: 'Iosevka', monospace;
+    font-size: 13px;
+    color: var(--link);
+    text-decoration: underline;
+  }
+
+  nav a.active {
+    color: var(--link-visited);
+  }
+
+  /* .footer {
+    margin-top: auto;
+    font-size: 10px;
+    line-height: 1.4;
+    color: var(--text-meta);
+  } */
+</style>

@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="kiran haber :: about">
+  <div class="content">
+    <p>
+      Hello!
+    </p>
+    <p>
+      I'm Kiran Haber, a high school graduate from San Diego about to start at UC Santa Barbara for Computer Engineering in the fall.
+      I'm a programmer and love to work with lean, low-power embedded systems for field research and personal enjoyment.
+    </p>
+    <p>
+      Aside from that, I have a lot of love for photography, classical & electric guitar, surfing, and orchids.
+    </p>
+    <p>
+      Visit my <a href="/photography">now</a> to see what I'm up to at the moment, or feel free to contact me at 
+      <u>haberkiran (at) proton (dot) me.</u>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .content {
+    padding: 40px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+</style>

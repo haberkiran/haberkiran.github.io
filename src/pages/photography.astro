@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+
+// In a real scenario, we might use Astro.glob to get images from public/photos
+// For now, we'll use a placeholder array
+const photos = [
+  { src: '/photos/000000020002.jpg', name: 'boulevard, ca' },
+  { src: '/photos/000000020010.jpg', name: 'boulevard, ca' },
+  { src: '/photos/000000020012.jpg', name: 'boulevard, ca' },
+  { src: '/photos/IMG_0109.jpg', name: 'tustin, ca' },
+];
+---
+
+<Base title="kiran haber :: photography">
+  <div class="photo-grid">
+    {photos.map(photo => (
+      <div class="photo-item">
+        <a href={photo.src} target="_blank">
+          <img src={photo.src} alt={photo.name} />
+          <div class="filename meta">{photo.name}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .photo-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #a0a4a8;
+  }
+
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .filename {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(178, 182, 186, 0.8);
+    padding: 2px 4px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    pointer-events: none;
+    font-family: 'Iosevka', monospace;
+  }
+
+  .photo-item:hover .filename {
+    opacity: 1;
+  }
+</style>
