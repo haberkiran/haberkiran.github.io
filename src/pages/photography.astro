@@ -1,13 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
 
-// In a real scenario, we might use Astro.glob to get images from public/photos
-// For now, we'll use a placeholder array
+import discoBall from '../photos/000000020002.jpg';
+import nightLights from '../photos/000000020010.jpg';
+import pipeHouse from '../photos/000000020012.jpg';
+import tustin from '../photos/IMG_0109.jpg';
+
 const photos = [
-  { src: '/photos/000000020002.jpg', name: 'boulevard, ca' },
-  { src: '/photos/000000020010.jpg', name: 'boulevard, ca' },
-  { src: '/photos/000000020012.jpg', name: 'boulevard, ca' },
-  { src: '/photos/IMG_0109.jpg', name: 'tustin, ca' },
+  { src: discoBall, name: 'boulevard, ca' },
+  { src: nightLights, name: 'boulevard, ca' },
+  { src: pipeHouse, name: 'boulevard, ca' },
+  { src: tustin, name: 'tustin, ca' },
 ];
 ---
 
@@ -15,8 +19,8 @@ const photos = [
   <div class="photo-grid">
     {photos.map(photo => (
       <div class="photo-item">
-        <a href={photo.src} target="_blank">
-          <img src={photo.src} alt={photo.name} />
+        <a href={photo.src.src} target="_blank">
+          <Image src={photo.src} alt={photo.name} width={600} loading="eager" />
           <div class="filename meta">{photo.name}</div>
         </a>
       </div>
