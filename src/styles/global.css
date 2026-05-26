@@ -63,3 +63,11 @@ h1, .site-name {
   text-decoration: none;
   color: var(--text);
 }
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+}

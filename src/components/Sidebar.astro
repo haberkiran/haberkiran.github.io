@@ -67,10 +67,32 @@ const name = "KIRAN HABER";
     color: var(--link-visited);
   }
 
-  /* .footer {
-    margin-top: auto;
-    font-size: 10px;
-    line-height: 1.4;
-    color: var(--text-meta);
-  } */
+  @media (max-width: 768px) {
+    aside {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 0.5px solid var(--border);
+      padding: 16px;
+      flex-direction: row;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 16px;
+    }
+
+    nav {
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
 </style>

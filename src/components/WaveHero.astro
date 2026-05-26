@@ -11,12 +11,15 @@
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#b2b6ba');
 
-  const width = container.clientWidth || window.innerWidth - 152;
+  const width = container.clientWidth || (window.innerWidth > 768 ? window.innerWidth - 152 : window.innerWidth);
   const height = container.clientHeight || window.innerHeight;
   const aspect = width / height;
 
   // Isometric-ish camera
-  const d = 100;
+  let d = 100;
+  if (aspect < 1) {
+    d = 100 / aspect;
+  }
   const camera = new THREE.OrthographicCamera(-d * aspect, d * aspect, d, -d, 1, 1000);
   camera.position.set(200, 200, 200);
   camera.lookAt(scene.position);
@@ -148,14 +151,18 @@
   animate();
 
   window.addEventListener('resize', () => {
-    const w = container.clientWidth || window.innerWidth - 152;
+    const w = container.clientWidth || (window.innerWidth > 768 ? window.innerWidth - 152 : window.innerWidth);
     const h = container.clientHeight || window.innerHeight;
     renderer.setSize(w, h);
     const aspect = w / h;
-    camera.left = -d * aspect;
-    camera.right = d * aspect;
-    camera.top = d;
-    camera.bottom = -d;
+    let currentD = 100;
+    if (aspect < 1) {
+      currentD = 100 / aspect;
+    }
+    camera.left = -currentD * aspect;
+    camera.right = currentD * aspect;
+    camera.top = currentD;
+    camera.bottom = -currentD;
     camera.updateProjectionMatrix();
   });
 </script>
