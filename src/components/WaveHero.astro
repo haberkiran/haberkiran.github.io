@@ -142,11 +142,19 @@
   gridGroup.rotation.z = -Math.PI / 4; // 45 deg
   gridGroup.rotation.x = -Math.PI / 3.5; // Tilt
 
+  let isRunning = true;
+
   function animate() {
+    if (!isRunning) return;
     requestAnimationFrame(animate);
     uniforms.uTime.value += 0.006;
     renderer.render(scene, camera);
   }
+
+  document.addEventListener('visibilitychange', () =>{
+    isRunning = !document.hidden;
+    if (isRunning) animate();
+  })
 
   animate();
 
