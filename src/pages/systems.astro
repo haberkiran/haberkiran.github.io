@@ -5,6 +5,17 @@ import Base from '../layouts/Base.astro';
 <Base title="kiran haber :: systems">
   <div class="content">
     <div class="project">
+      <a href="https://github.com/missioncreep11/rtk-wave-buoy">RTK Wave Buoy</a>
+      <p>
+        An open-source, centimeter-precise GNSS wave buoy I'm contributing to as part of my internship at Scripps Institution of 
+        Oceanography's <a href="https://www.mod.ucsd.edu/">MOD Lab.</a> I've engineered a new antenna mount, developed a Bluetooth LE 
+        serial comms driver, and designed/implemented a telemetry pipeline that automatically forwards buoy data over LTE to a 
+        Cloudflare Worker, which triggers a GitHub Action that updates a web dashboard for real-time viewing. I'm currently updating the
+        project documentation to improve readability and maintainability across the project.
+      </p>
+      <span class="meta">RTK, GNSS, C++, ESP32, I2C</span>
+    </div>
+    <div class="project">
       <strong>Orchid watering system <span class="in-progress">(in progress)</span></strong>
       <p>
         A Raspberry Pi powered smart irrigation setup. Reads moisture of my plant daily via a capacitive sensor and administers water if
